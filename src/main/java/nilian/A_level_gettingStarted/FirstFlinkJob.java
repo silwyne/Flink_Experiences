@@ -1,4 +1,4 @@
-package nilian.gettingStarted;
+package nilian.A_level_gettingStarted;
 
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.api.common.typeinfo.Types;
