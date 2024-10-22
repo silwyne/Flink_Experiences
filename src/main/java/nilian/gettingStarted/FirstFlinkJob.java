@@ -48,7 +48,7 @@ public class FirstFlinkJob {
 
         /*
         Now we introduce the source to our StreamExecutionEnvironment!
-        And recieve a DataStream in return!
+        And receive a DataStream in return!
          */
         DataStream<String> myDataStream = env.fromSource(MySimpleSource, WatermarkStrategy.noWatermarks(), "MySimpleSource");
         //letting the data stream get printed as new values float in it!
