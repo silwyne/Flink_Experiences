@@ -12,6 +12,15 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * This Flink Job is making random simulated rows of data!
+ * In this job you will learn :
+ * 1. how to initialize a flink job
+ * 2. how to introduce a source to flink
+ * 3. simple tip about executing flink job
+ *
+ * @author seyed mohammad hasan tabatabaei asl
+ */
 public class FirstFlinkJob {
     public static void main(String[] args) {
 
