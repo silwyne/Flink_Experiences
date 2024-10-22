@@ -10,6 +10,8 @@ import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 
 /**
  * This Flink Job example is for when your source is kafka!
+ *
+ * @author seyed mohamad hasan tabatabaei asl
  */
 public class KafkaSourceExample {
     public static void main(String[] args) {

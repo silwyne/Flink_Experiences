@@ -16,6 +16,8 @@ import java.sql.SQLException;
  * Using DataStream API in this example!
  * In this example you will learn how to use JdbcSource to read data from table
  * In this example desired table schema is like this! (name VARCHAR, age INTEGER)
+ *
+ * @author seyed mohamad hasan tabatabaei asl
  */
 public class JdbcSourceExample {
     public static void main(String[] args) {
@@ -25,8 +27,7 @@ public class JdbcSourceExample {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 
         /*
-        Now the Main Part of this example is our KafkaSource! Here I use SimpleString with no Deserialization.
-        because this example is not about deserialization!
+        Now the Main Part of this example is our JdbcSource!
          */
         //defining result executor which extracts data from table
         //for table schema like => (name VARCHAR, age INTEGER)
@@ -43,7 +44,7 @@ public class JdbcSourceExample {
         String jdbcUrl = "jdbc:postgresql://localhost:5432/your_data_base";
         String jdbcUsername = "USERNAME";
         String jdbcPassword = "PASS";
-        //finally the kafka source
+        //finally the jdbc source
         JdbcSource<Tuple2<String, Integer>> myJdbcSource = JdbcSource.<Tuple2<String, Integer>>builder()
                 .setSql("select * from "+tableName)
                 .setDBUrl(jdbcUrl)
