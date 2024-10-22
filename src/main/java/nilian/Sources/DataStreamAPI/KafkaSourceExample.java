@@ -1,4 +1,4 @@
-package nilian.Sources;
+package nilian.Sources.DataStreamAPI;
 
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.api.common.serialization.DeserializationSchema;
