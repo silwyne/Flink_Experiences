@@ -154,6 +154,14 @@
             <artifactId>protobuf-java</artifactId>
             <version>4.27.2</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.clickhouse/clickhouse-jdbc -->
+        <dependency>
+            <groupId>com.clickhouse</groupId>
+            <artifactId>clickhouse-jdbc</artifactId>
+            <version>0.7.0</version>
+        </dependency>
+
     </dependencies>
 
 </project>
