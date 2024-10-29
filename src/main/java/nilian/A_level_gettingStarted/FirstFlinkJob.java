@@ -13,6 +13,8 @@ import java.util.List;
 import java.util.Random;
 
 /**
+ * <h1>First Flink Job</h1>
+ * <h3>using data flow simulator as source</h3>
  * This Flink Job is making random simulated rows of data!
  * In this job you will learn :
  * 1. how to initialize a flink job

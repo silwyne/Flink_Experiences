@@ -13,11 +13,39 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- * Using DataStream API in this example!
+ * <p>Using DataStream API in this example!
  * In this example you will learn how to use JdbcSource to read data from table
- * In this example desired table schema is like this! (name VARCHAR, age INTEGER)
+ * In this example desired table schema is like this! (name VARCHAR, age INTEGER)</p>
  *
- * @author seyed mohamad hasan tabatabaei asl
+ * <h2>Postgres connection Dependency</h2>
+ * We use these dependencies
+ * <pre>
+ * {@code
+ * <dependency>
+ *   <groupId>org.postgresql</groupId>
+ *   <artifactId>postgresql</artifactId>
+ *   <version>42.7.2</version>
+ * </dependency>
+ * <dependency>
+ *   <groupId>org.apache.flink</groupId>
+ *   <artifactId>flink-jdbc_2.12</artifactId>
+ *   <version>1.10.3</version>
+ * </dependency>
+ * <dependency>
+ *   <groupId>org.apache.flink</groupId>
+ *   <artifactId>flink-connector-jdbc</artifactId>
+ *   <version>3.2.0-1.19</version>
+ * </dependency>
+ * }
+ * </pre>
+ *
+ * <h2>Postgres URL Format</h2>
+ * <p><strong>Critical Note:</strong> The correct format for the Postgres URL in Flink is:</p>
+ * <pre>
+ * jdbc:postgresql://HOST:PORT/DBNAME
+ * </pre>
+ *
+ * @author Seyed Mohamad Hasan Tabatabaei Asl
  */
 public class JdbcSourceExample {
     public static void main(String[] args) {

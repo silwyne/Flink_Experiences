@@ -1,4 +1,4 @@
-package nilian.Sinks.DataStreamAPI;
+package nilian.Sinks;
 
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.api.common.typeinfo.TypeHint;
@@ -22,18 +22,29 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * In this job we sink our datastream into clickhouse.
- * Note : make sure the table exists in clickhouse before you sink you data
- * we use clickhouse driver for sinking:
- * ```maven
+ * This job sinks our datastream into ClickHouse.
+ *
+ * <p><strong>Important:</strong> Ensure the target table exists in ClickHouse before sinking data.</p>
+ *
+ * <h2>ClickHouse Driver Dependency</h2>
+ * We use the ClickHouse JDBC driver for sinking. Add the following to your pom.xml:
+ * <pre>
+ * {@code
  * <dependency>
  *     <groupId>com.clickhouse</groupId>
  *     <artifactId>clickhouse-jdbc</artifactId>
  *     <version>0.7.0</version>
  * </dependency>
- * ```
+ * }
+ * </pre>
  *
- * @author seyed mohamad hasan tabatabaei asl
+ * <h2>ClickHouse URL Format</h2>
+ * <p><strong>Critical Note:</strong> The correct format for the ClickHouse URL in Flink is:</p>
+ * <pre>
+ * jdbc:clickhouse:http://HOST:PORT/DBNAME
+ * </pre>
+ *
+ * @author Seyed Mohamad Hasan Tabatabaei Asl
  */
 public class ClickHouseSinkExample {
     public static void main(String[] args) throws Exception {
@@ -76,10 +87,10 @@ public class ClickHouseSinkExample {
                         .withMaxRetries(5)
                         .build(),
                 new JdbcConnectionOptions.JdbcConnectionOptionsBuilder()
-                        .withUrl("jdbc:clickhouse:http://@localhost:8123")
+                        .withUrl("jdbc:clickhouse:http://localhost:8123")
                         .withDriverName("com.clickhouse.jdbc.ClickHouseDriver")
-                        .withUsername("USERNAME")
-                        .withPassword("PASSWORD")
+//                        .withUsername("USERNAME")
+//                        .withPassword("PASSWORD")
                         .build()
         );
 

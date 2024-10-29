@@ -15,14 +15,16 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * In this job you will learn how to map each row of your data stream
- * into something new you want with your own defined function (USER_DEFINED)!
+ * <h1>Map Function example</h1>
+ * <p>In this job you will learn how to map each row of your data stream
+ * into something new you want with your own defined function (USER_DEFINED)!</p>
  *
- *
- * STORY EXPLANATIONS OF JOB: we will get some source with this schema (name, score, level)
+ * <h2>STORY EXPLANATIONS OF JOB</h2>
+ * </p>we will get some source with this schema (name, score, level)
  * and return (name, totalScore) in result ! hint : totalScore = score * level !
  * In this story we have the data stream of players score in each level they go.
  * And we calculate their total score of the level as the level is higher the score of it worth more!
+ *</p>
  *
  * @author seyed mohamad hasan tabatabaei asl
  */

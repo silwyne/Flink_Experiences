@@ -9,9 +9,32 @@ import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 
 /**
- * This Flink Job example is for when your source is kafka!
+ * <p>Using DataStream API in this example!
+ * In this example you will learn how to read data from a kafka topic</p>
  *
- * @author seyed mohamad hasan tabatabaei asl
+ * <h2>Kafka connection Dependency</h2>
+ * We use these dependencies
+ * <pre>
+ * {@code
+ * <dependency>
+ *    <groupId>org.apache.flink</groupId>
+ *    <artifactId>flink-connector-kafka</artifactId>
+ *    <version>3.2.0-1.19</version>
+ * </dependency>
+ * <dependency>
+ *    <groupId>org.apache.flink</groupId>
+ *    <artifactId>flink-connector-kafka-base_2.12</artifactId>
+ *    <version>1.11.6</version>
+ * </dependency>
+ * <dependency>
+ *    <groupId>org.apache.kafka</groupId>
+ *    <artifactId>kafka-clients</artifactId>
+ *    <version>3.7.1</version>
+ * </dependency>
+ * }
+ * </pre>
+ *
+ * @author Seyed Mohamad Hasan Tabatabaei Asl
  */
 public class KafkaSourceExample {
     public static void main(String[] args) {
