@@ -49,7 +49,7 @@ public class MapExampleJob {
         /*
         Now we Map the input data stream into result using our MapFunction!
          */
-        //Making Map Function
+        // Making Map Function
         MapFunction<String, Tuple2<String, Integer>> mapFunction = new MapFunction<String, Tuple2<String, Integer>>() {
             @Override
             public Tuple2<String, Integer> map(String s) throws Exception {
@@ -90,8 +90,8 @@ public class MapExampleJob {
         List<String> names = Arrays.asList("Mina", "David", "John", "Mohammad", "saleh", "amir", "arash", "elenor");
         GeneratorFunction<Long, String> generatorFunction =
                 index -> names.get(Math.abs(random.nextInt()) % names.size())+","+ // get some player name !
-                        Math.abs(random.nextInt(1000))+","+ //limiting the score to 1k !
-                        Math.abs(random.nextInt(100)); //limiting the level to 100 !
+                        Math.abs(random.nextInt(1000))+","+ // limiting the score to 1k !
+                        Math.abs(random.nextInt(100)); // limiting the level to 100 !
         return
                 new DataGeneratorSource<>(generatorFunction, Long.MAX_VALUE,
                         RateLimiterStrategy.perSecond(10), Types.STRING);

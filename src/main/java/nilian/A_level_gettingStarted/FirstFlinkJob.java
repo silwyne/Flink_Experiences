@@ -38,12 +38,12 @@ public class FirstFlinkJob {
         Now you might want to have some Sources. but as This example is not about Source in Flink!
         I simply use a simple simulated Source!
          */
-        //This source is simply made in format of a csv ! => name,number
+        // This source is simply made in format of a csv ! => name,number
         Random random = new Random() ;
         List<String> names = Arrays.asList("Mina", "David", "John", "Mohammad");
         GeneratorFunction<Long, String> generatorFunction =
                 index -> names.get(Math.abs(random.nextInt()) % names.size())+","+random.nextInt();
-        //finally the source
+        // finally the source
         DataGeneratorSource<String> MySimpleSource =
                 new DataGeneratorSource<>(generatorFunction, Long.MAX_VALUE,
                         RateLimiterStrategy.perSecond(10), Types.STRING);
@@ -53,7 +53,8 @@ public class FirstFlinkJob {
         And receive a DataStream in return!
          */
         DataStream<String> myDataStream = env.fromSource(MySimpleSource, WatermarkStrategy.noWatermarks(), "MySimpleSource");
-        //letting the data stream get printed as new values float in it!
+        // letting the data stream get printed as new values float in it!
+        // this way we sink the DataStream into Console
         myDataStream.print();
 
         /*

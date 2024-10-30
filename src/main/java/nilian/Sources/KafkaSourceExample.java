@@ -1,4 +1,4 @@
-package nilian.Sources.DataStreamAPI;
+package nilian.Sources;
 
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.api.common.serialization.DeserializationSchema;
@@ -72,7 +72,7 @@ public class KafkaSourceExample {
         Now we introduce the source to our StreamExecutionEnvironment!
         And receive a DataStream in return!
          */
-        DataStream<String> myDataStream = env.fromSource(MyKafkaSource, WatermarkStrategy.noWatermarks(), "MySimpleSource");
+        DataStream<String> myDataStream = env.fromSource(MyKafkaSource, WatermarkStrategy.noWatermarks(), "My Kafka Source");
         //letting the data stream get printed as new values float in it!
         myDataStream.print();
 
@@ -81,7 +81,7 @@ public class KafkaSourceExample {
         Without this, the job never execute!
          */
         try {
-            env.execute("MyFirstFlink Job!");
+            env.execute("Kafka source job example!");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

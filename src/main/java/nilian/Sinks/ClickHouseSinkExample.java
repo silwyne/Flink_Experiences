@@ -41,7 +41,7 @@ import java.util.Random;
  * <h2>ClickHouse URL Format</h2>
  * <p><strong>Critical Note:</strong> The correct format for the ClickHouse URL in Flink is:</p>
  * <pre>
- * jdbc:clickhouse:http://HOST:PORT/DBNAME
+ * <a href=>jdbc:clickhouse:http://HOST:PORT/DBNAME</a>
  * </pre>
  *
  * @author Seyed Mohamad Hasan Tabatabaei Asl

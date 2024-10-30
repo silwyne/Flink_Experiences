@@ -1,4 +1,4 @@
-package nilian.Sources.DataStreamAPI;
+package nilian.Sources;
 
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.api.common.typeinfo.TypeHint;
@@ -42,7 +42,7 @@ import java.sql.SQLException;
  * <h2>Postgres URL Format</h2>
  * <p><strong>Critical Note:</strong> The correct format for the Postgres URL in Flink is:</p>
  * <pre>
- * jdbc:postgresql://HOST:PORT/DBNAME
+ * <a href=>jdbc:postgresql://HOST:PORT/DBNAME</a>
  * </pre>
  *
  * @author Seyed Mohamad Hasan Tabatabaei Asl
@@ -97,7 +97,7 @@ public class JdbcSourceExample {
         Without this, the job never execute!
          */
         try {
-            env.execute("MyFirstFlink Job!");
+            env.execute("Jdbc source job example!");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
