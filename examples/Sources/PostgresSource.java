@@ -1,4 +1,4 @@
-package nilian.Sources;
+package Sources;
 
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.api.common.typeinfo.TypeHint;
@@ -6,6 +6,7 @@ import org.apache.flink.api.common.typeinfo.TypeInformation;
 import org.apache.flink.connector.jdbc.source.reader.extractor.ResultExtractor;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
+import org.apache.flink.connector.jdbc.source.JdbcSource;
 import scala.Tuple2;
 
 import java.sql.ResultSet;
@@ -46,7 +47,7 @@ import java.sql.SQLException;
  *
  * @author Seyed Mohamad Hasan Tabatabaei Asl
  */
-public class JdbcSource {
+public class PostgresSource {
     public static void main(String[] args) {
         /*
         First step in any flink job is to make a StreamExecutionEnvironment!
@@ -72,7 +73,7 @@ public class JdbcSource {
         String jdbcUsername = "USERNAME";
         String jdbcPassword = "PASS";
         //finally the jdbc source
-        org.apache.flink.connector.jdbc.source.JdbcSource<Tuple2<String, Integer>> myJdbcSource = org.apache.flink.connector.jdbc.source.JdbcSource.<Tuple2<String, Integer>>builder()
+        JdbcSource<Tuple2<String, Integer>> myJdbcSource = JdbcSource.<Tuple2<String, Integer>>builder()
                 .setSql("select * from "+tableName)
                 .setDBUrl(jdbcUrl)
                 .setUsername(jdbcUsername)

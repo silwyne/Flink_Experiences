@@ -1,4 +1,4 @@
-package nilian.Sinks;
+package Sinks;
 
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.api.common.typeinfo.TypeHint;
