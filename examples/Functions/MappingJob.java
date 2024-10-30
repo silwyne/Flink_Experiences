@@ -28,7 +28,7 @@ import java.util.Random;
  *
  * @author seyed mohamad hasan tabatabaei asl
  */
-public class MapExampleJob {
+public class MappingJob {
     public static void main(String[] args) {
         /*
         First step in any flink job is to make a StreamExecutionEnvironment!

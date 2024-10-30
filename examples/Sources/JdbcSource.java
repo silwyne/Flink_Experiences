@@ -3,7 +3,6 @@ package nilian.Sources;
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.api.common.typeinfo.TypeHint;
 import org.apache.flink.api.common.typeinfo.TypeInformation;
-import org.apache.flink.connector.jdbc.source.JdbcSource;
 import org.apache.flink.connector.jdbc.source.reader.extractor.ResultExtractor;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
@@ -47,7 +46,7 @@ import java.sql.SQLException;
  *
  * @author Seyed Mohamad Hasan Tabatabaei Asl
  */
-public class JdbcSourceExample {
+public class JdbcSource {
     public static void main(String[] args) {
         /*
         First step in any flink job is to make a StreamExecutionEnvironment!
@@ -73,7 +72,7 @@ public class JdbcSourceExample {
         String jdbcUsername = "USERNAME";
         String jdbcPassword = "PASS";
         //finally the jdbc source
-        JdbcSource<Tuple2<String, Integer>> myJdbcSource = JdbcSource.<Tuple2<String, Integer>>builder()
+        org.apache.flink.connector.jdbc.source.JdbcSource<Tuple2<String, Integer>> myJdbcSource = org.apache.flink.connector.jdbc.source.JdbcSource.<Tuple2<String, Integer>>builder()
                 .setSql("select * from "+tableName)
                 .setDBUrl(jdbcUrl)
                 .setUsername(jdbcUsername)

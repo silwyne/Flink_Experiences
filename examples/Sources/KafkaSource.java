@@ -3,7 +3,6 @@ package nilian.Sources;
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.api.common.serialization.DeserializationSchema;
 import org.apache.flink.api.common.serialization.SimpleStringSchema;
-import org.apache.flink.connector.kafka.source.KafkaSource;
 import org.apache.flink.connector.kafka.source.enumerator.initializer.OffsetsInitializer;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
@@ -36,7 +35,7 @@ import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
  *
  * @author Seyed Mohamad Hasan Tabatabaei Asl
  */
-public class KafkaSourceExample {
+public class KafkaSource {
     public static void main(String[] args) {
         /*
         First step in any flink job is to make a StreamExecutionEnvironment!
@@ -58,7 +57,7 @@ public class KafkaSourceExample {
         DeserializationSchema<String> deserializationSchema = new SimpleStringSchema() ;
 
         //finally the kafka source
-        KafkaSource<String> MyKafkaSource = KafkaSource.<String>builder()
+        org.apache.flink.connector.kafka.source.KafkaSource<String> MyKafkaSource = org.apache.flink.connector.kafka.source.KafkaSource.<String>builder()
                 .setBootstrapServers(bootstrapServer)
                 .setTopics(topicName)
                 .setGroupId(groupId)

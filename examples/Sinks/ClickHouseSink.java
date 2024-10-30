@@ -46,7 +46,7 @@ import java.util.Random;
  *
  * @author Seyed Mohamad Hasan Tabatabaei Asl
  */
-public class ClickHouseSinkExample {
+public class ClickHouseSink {
     public static void main(String[] args) throws Exception {
         /*
         First step in any flink job
