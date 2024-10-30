@@ -14,3 +14,5 @@ This is the link to `DataGen` connector Docs! you can read it if you want ;)
 [DataGen Connector in DataStream API](https://nightlies.apache.org/flink/flink-docs-master/docs/connectors/datastream/datagen/)
 
 smile !
+
+![evening_work_setup Picture from www.stockcake.com](../../images/evening_work_setup.jpg)

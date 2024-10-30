@@ -9,4 +9,4 @@ but I believe it is more efficient for beginners to learn from examples!
 happily the repository has some examples, so you can read each example and learn something new!
 
     Apache Flink
-![Alt text](images/squirrel.jpg)
+![Squirrel Picture from www.stockcake.com](images/squirrel.jpg)
