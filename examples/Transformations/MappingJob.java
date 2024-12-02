@@ -1,4 +1,4 @@
-package Functions;
+package Transformations;
 
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.api.common.functions.MapFunction;

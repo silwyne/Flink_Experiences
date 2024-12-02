@@ -1,4 +1,4 @@
-# Apache Flink Functions
+# Apache Flink Transformations
 
 - #### You may think like how can I manipulate the datastream?
 - #### How can I convert each Row of data into 2 or 3 or even more Rows of Data?
