@@ -1,0 +1,40 @@
+version: '3'
+services:
+  jobmanager:
+    image: flink
+    container_name: jobmanager
+    ports:
+      - "8081:8081"
+    command: jobmanager
+    volumes:
+      - ./Your-Jar-File.jar:/opt/flink/usrlib/Your-Jar-File.jar
+    environment:
+      - |
+        FLINK_PROPERTIES=
+        jobmanager.rpc.address: jobmanager
+        taskmanager.numberOfTaskSlots: 8
+        taskmanager.memory.process.size: 6g
+        taskmanager.cpu.cores: 3
+    networks:
+      - flink-network
+
+  taskmanager:
+    image: flink
+    depends_on:
+      - jobmanager
+    command: taskmanager
+    deploy:
+      replicas: 3
+    environment:
+      - |
+        FLINK_PROPERTIES=
+        jobmanager.rpc.address: jobmanager
+        taskmanager.numberOfTaskSlots: 8
+        taskmanager.memory.process.size: 6g
+        taskmanager.cpu.cores: 3
+    networks:
+      - flink-network
+
+networks:
+  flink-network:
+    driver: bridge
