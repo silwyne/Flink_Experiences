@@ -13,5 +13,11 @@ happily the repository has some examples, so you can read each example and learn
 > - You need nothing more than (Jdk 11) and dependencies present on your development environment.
 > - This is possible because all the examples has simulated input datastream provided by flink itself.
 
+>[!IMPORTANT]
+> You will not learn until you run each example
+
+>[!TIP]
+> My IDE is : Intellij Idea
+
     Apache Flink
 ![Squirrel Picture from www.stockcake.com](images/squirrel.jpg)
