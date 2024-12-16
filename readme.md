@@ -8,5 +8,10 @@ but I believe it is more efficient for beginners to learn from examples!
 
 happily the repository has some examples, so you can read each example and learn something new!
 
+>[!NOTE]
+> - you can run all the examples separately.
+> - You need nothing more than (Jdk 11) and dependencies present on your development environment.
+> - This is possible because all the examples has simulated input datastream provided by flink itself.
+
     Apache Flink
 ![Squirrel Picture from www.stockcake.com](images/squirrel.jpg)
