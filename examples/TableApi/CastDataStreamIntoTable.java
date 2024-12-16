@@ -115,17 +115,37 @@ public class CastDataStreamIntoTable {
                         RateLimiterStrategy.perSecond(100), Types.STRING);
     }
 
+    /*
+    Here is our Pojo(Plain Old Java Object)
+    TIPS FOR Pojo:
+    1. has a constructor which gets no param
+    2. has a constructor which gets all data fields
+    3. as extra_tip you must Override toString function because you might want to print your datastream into stdout!
+     */
     public static class PlayerData {
         public String name;
         public int point;
         public int xp;
 
+        // constructor which gets no param
         public PlayerData() {}
 
+        // constructor which gets all data fields
         public PlayerData(String name, int point, int xp) {
             this.name = name;
             this.point = point;
             this.xp = xp;
+        }
+
+        // toString function returns Pojo in String format
+        @Override
+        public String toString() {
+            /*
+             this is the string format of your Pojo
+             Which might be Json or Csv, Or what ever you like.
+             */
+            // I like csv
+            return name+','+point+','+xp;
         }
     }
 
