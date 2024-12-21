@@ -8,6 +8,7 @@ import org.apache.flink.connector.datagen.source.DataGeneratorSource;
 import org.apache.flink.connector.datagen.source.GeneratorFunction;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
+import static org.apache.flink.table.api.Expressions.*;
 import org.apache.flink.table.api.Table;
 import org.apache.flink.table.api.bridge.java.StreamTableEnvironment;
 
@@ -89,11 +90,22 @@ public class CastDataStreamIntoTable {
         Table t1_stream = tEnv.fromDataStream(stream);
 
         /*
-        FINALLY printing to stdout
+        Doing some process
          */
-        t1_stream
-                .execute()// triggering the table
-                .print(); // printing to stdout
+        Table result = t1_stream
+                .groupBy(col("name"))
+                .select(
+                    col("name"),
+                    col("point").sum().as("sum_point"),
+                    col("xp").sum().as("sum_xp")
+                )
+                .addColumns(currentTimestamp().as("event_time"));
+
+        /*
+        Finally printing the result
+         */
+        result.execute().print();
+
 
         env.execute("Table API sample job");
     }
