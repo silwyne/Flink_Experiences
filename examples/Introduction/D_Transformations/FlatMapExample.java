@@ -57,9 +57,9 @@ public class FlatMapExample {
         DataStream<String> myDataStream = env.fromSource(mySimpleSource, WatermarkStrategy.noWatermarks(), "MySimpleSource");
 
         /*
-        Now we Map the input data stream into result using our MapFunction!
+        Now we Map the input data stream into more than one result rows using our FlatMapFunction!
          */
-        // Making Map Function
+        // Making FlatMapFunction
         FlatMapFunction<String, Tuple3<String, Integer, Integer>> mapFunction = new FlatMapFunction<String, Tuple3<String, Integer, Integer>>() {
 
             private final Random random = new Random();
@@ -80,7 +80,7 @@ public class FlatMapExample {
         };
 
         /*
-        Now we use the MapFunction to process the input stream and get the result!
+        Now we use the FlatMapFunction to process the input stream and get the result!
          */
         DataStream<Tuple3<String, Integer, Integer>> resultStream = myDataStream.flatMap(mapFunction);
 
