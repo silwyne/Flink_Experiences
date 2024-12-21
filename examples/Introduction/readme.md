@@ -13,5 +13,7 @@
 - #### how to transform data in someway
 - #### how to work with Table API
 
-
+\
+\
+\
 ![digital_data_stream Picture from www.stockcake.com](../../images/digital_data_stream.jpg)
