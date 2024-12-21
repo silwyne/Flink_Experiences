@@ -15,4 +15,4 @@ This is the link to `DataGen` connector Docs! you can read it if you want ;)
 
 smile !
 
-![evening_work_setup Picture from www.stockcake.com](../../images/evening_work_setup.jpg)
+![evening_work_setup Picture from www.stockcake.com](../../../images/evening_work_setup.jpg)

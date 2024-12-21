@@ -13,4 +13,4 @@ Here you can see all those connectors:\
 
 
 
-![importance_of_stream_processing picture from www.pinterest.com](../../images/importance_of_stream_processing.jpeg)
+![importance_of_stream_processing picture from www.pinterest.com](../../../images/importance_of_stream_processing.jpeg)

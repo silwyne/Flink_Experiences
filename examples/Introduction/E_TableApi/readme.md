@@ -35,4 +35,4 @@ TableEnvironment tableEnv = TableEnvironment.create(EnvironmentSettings.newInsta
 click the link for more information
 [Table API](https://nightlies.apache.org/flink/flink-docs-release-1.17/docs/dev/table/overview/)
 
-![evening_work_setup Picture from www.stockcake.com](../../images/evening_work_setup.jpg)
+![evening_work_setup Picture from www.stockcake.com](../../../images/evening_work_setup.jpg)

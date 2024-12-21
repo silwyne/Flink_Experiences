@@ -22,4 +22,4 @@ Go into Package and see what kind of Functions is there.
 Try reading about them in this link :\
 [UserDefined-Functions](https://nightlies.apache.org/flink/flink-docs-release-1.20/docs/dev/datastream/user_defined_functions/)
 
-![digital_data_stream Picture from www.stockcake.com](../../images/digital_data_stream.jpg)
+![digital_data_stream Picture from www.stockcake.com](../../../images/digital_data_stream.jpg)

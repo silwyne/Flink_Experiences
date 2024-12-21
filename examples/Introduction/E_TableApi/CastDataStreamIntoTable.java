@@ -1,4 +1,4 @@
-package TableApi;
+package Introduction.E_TableApi;
 
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.api.common.functions.MapFunction;

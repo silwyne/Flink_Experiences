@@ -11,4 +11,4 @@ So you must know how to get your data from different kinds of `Sources` so you c
 Here you can see all those connectors :\
 [DataStream connectors](https://nightlies.apache.org/flink/flink-docs-master/docs/connectors/datastream/overview/)
 
-![blue_city_tech Picture from www.stockcake.com](../../images/blue_city_tech.jpg)
+![blue_city_tech Picture from www.stockcake.com](../../../images/blue_city_tech.jpg)
