@@ -1,7 +1,5 @@
 # My Flink Experiences
 
-I am seyed mohamad hasan tabatabaei asl!
-
 The point of making this git repo is to share my Flink experiences.\
 I know there is a good documentation for Apache Flink.\
 but I believe it is more efficient for beginners to learn from examples!
