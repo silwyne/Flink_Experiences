@@ -6,15 +6,16 @@ services:
     ports:
       - "8081:8081" # for web ui
       - "6123:6123" # rpc port
-      - "6124:6124" # blob server ?
+      - "6124:6124" # blob server
     command: jobmanager
     volumes:
       - ./jars:/jars
+      - ./configs:/configs
     environment:
       - |
         FLINK_PROPERTIES=
         web.upload.dir: /jars
-        jobmanager.rpc.address: jobmanager
+        jobmanager.rpc.address: 172.30.113.47
     networks:
       - flink-network
 
@@ -23,18 +24,51 @@ services:
     depends_on:
       - jobmanager
     command: taskmanager
+    ports:
+      - "6121:6121"
+      - "6127:6127"
     environment:
       - |
         FLINK_PROPERTIES=
-        jobmanager.rpc.address: jobmanager
-        taskmanager.numberOfTaskSlots: 8
+        jobmanager.rpc.address: 172.30.113.47
+        taskmanager.numberOfTaskSlots: 1
         taskmanager.memory.process.size: 6g
+        taskmanager.data.port : 6121
+        taskmanager.rpc.port : 6127
         taskmanager.cpu.cores: 3
     deploy:
       replicas: 1
+#      placement:
+#        constraints:
+#          - node.hostname == debian
     networks:
       - flink-network
+
+#  worker:
+#    image: flink:1.19-java11
+#    ports:
+#      - "6122:6122"
+#    depends_on:
+#      - jobmanager
+#    command: taskmanager
+#    environment:
+#      - |
+#        FLINK_PROPERTIES=
+#        jobmanager.rpc.address: 172.30.113.47
+#        taskmanager.numberOfTaskSlots: 1
+#        taskmanager.memory.process.size: 6g
+#        taskmanager.data.port : 6122
+#        taskmanager.cpu.cores: 3
+#    deploy:
+#      replicas: 1
+#      placement:
+#        constraints:
+#          - node.hostname == Zebra-Sinker
+#    networks:
+#      - flink-network
 
 networks:
   flink-network:
     driver: bridge
+#    driver: overlay
+#    attachable: true
